@@ -3,6 +3,7 @@ package com.dshershen.telegram;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 
 // Аннотация, которая объединяет в себя @Configuration, @EnableAutoConfiguration, @ComponentScan
 @SpringBootApplication

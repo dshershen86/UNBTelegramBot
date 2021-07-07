@@ -11,8 +11,8 @@
 
     </parent>
 
-    <groupId>com.dshershen</groupId>
-    <artifactId>TelegramBotUNB</artifactId>
+    <groupId>com.dshershen.telegram</groupId>
+    <artifactId>telegrambotunb</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -21,6 +21,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.compiler.source>16</maven.compiler.source>
         <maven.compiler.target>16</maven.compiler.target>
+        <mainClass>com.dshershen.telegram.App</mainClass>
     </properties>
     <dependencies>
         <dependency>
@@ -39,6 +40,17 @@
             <artifactId>telegrambots</artifactId>
             <version>5.3.0</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.yaml</groupId>
+            <artifactId>snakeyaml</artifactId>
+            <version>1.28</version>
+        </dependency>
+        <dependency>
+            <groupId>org.telegram</groupId>
+            <artifactId>telegrambots-spring-boot-starter</artifactId>
+            <version>5.3.0</version>
+        </dependency>
     </dependencies>
     <build>
         <finalName>BotUNB</finalName>
@@ -52,7 +64,24 @@
                     <source>${java.version}</source>
                     <target>${java.version}</target>
                 </configuration>
+
             </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <fork>true</fork>
+                    <mainClass>${mainClass}</mainClass>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -61,18 +90,33 @@
                     <argLine>-Dfile.encoding=UTF-8</argLine>
                 </configuration>
             </plugin>
-
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>
+                                ${mainClass}
+                            </mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>com.heroku.sdk</groupId>
                 <artifactId>heroku-maven-plugin</artifactId>
                 <version>3.0.3</version>
                 <configuration>
-                    <appName>BotUNB</appName>
+                    <appName>telegrambotunb</appName>
                     <processTypes>
-                        <worker>
-                            java $JAVA_OPTS -cp target/classes/:target/dependency/* App
-                        </worker>
+                        <web>java $JAVA_OPTS -jar
+                            ${project.build.directory}/${project.build.finalName}.jar</web>
                     </processTypes>
+
+                    <includes>
+                        <include>${project.build.directory}/${project.build.finalName}.jar</include>
+                    </includes>
                 </configuration>
             </plugin>
 
