@@ -70,7 +70,7 @@
                     <appName>BotUNB</appName>
                     <processTypes>
                         <worker>
-                            java $JAVA_OPTS -cp App
+                            java $JAVA_OPTS -cp target/classes/:target/dependency/* App
                         </worker>
                     </processTypes>
                 </configuration>
