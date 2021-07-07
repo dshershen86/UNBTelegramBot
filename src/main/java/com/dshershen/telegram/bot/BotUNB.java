@@ -1,4 +1,5 @@
 package com.dshershen.telegram.bot;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;

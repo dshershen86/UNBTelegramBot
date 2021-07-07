@@ -1,4 +1,4 @@
-package com.dshershen.telegram.app;
+package com.dshershen.telegram;
 
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
