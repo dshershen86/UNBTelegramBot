@@ -1,1 +1,1 @@
-web: java -jar target/BotUNB
+web: java -jar /target/BotUNB.jar
