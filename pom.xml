@@ -41,7 +41,7 @@
         </dependency>
     </dependencies>
     <build>
-        <finalName>TelegramNotifierBot</finalName>
+        <finalName>BotUNB</finalName>
         <defaultGoal>package</defaultGoal>
         <plugins>
             <plugin>
