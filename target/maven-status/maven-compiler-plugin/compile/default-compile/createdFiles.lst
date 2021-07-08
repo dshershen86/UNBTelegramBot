@@ -1,4 +1,5 @@
 com\dshershen\telegram\repository\UserRepository.class
+com\dshershen\telegram\bot\WebHook.class
 com\dshershen\telegram\ApplicationConfig.class
 com\dshershen\telegram\model\User.class
 com\dshershen\telegram\bot\BotUNB.class
