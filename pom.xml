@@ -125,22 +125,7 @@
                 </configuration>
             </plugin>
 
-            <plugin>
-                <groupId>com.heroku.sdk</groupId>
-                <artifactId>heroku-maven-plugin</artifactId>
-                <version>3.0.3</version>
-                <configuration>
-                    <appName>telegrambotunb</appName>
-                    <processTypes>
-                        <web>java $JAVA_OPTS -jar
-                            ${project.build.directory}/${project.build.finalName}.jar</web>
-                    </processTypes>
-                    <jdkVersion>1.8</jdkVersion>
-                    <includes>
-                        <include>${project.build.directory}/${project.build.finalName}.jar</include>
-                    </includes>
-                </configuration>
-            </plugin>
+
 
         </plugins>
     </build>
