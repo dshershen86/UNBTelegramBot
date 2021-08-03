@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="botunb@localhost" uuid="d9ed35a2-5a4a-4929-9ca8-04bf3063ae2e">
+    <data-source source="LOCAL" name="BotUNB@34.118.17.83" uuid="d9ed35a2-5a4a-4929-9ca8-04bf3063ae2e">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <remarks>local</remarks>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/botunb</jdbc-url>
+      <jdbc-url>jdbc:postgresql://34.118.17.83:5432/BotUNB</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

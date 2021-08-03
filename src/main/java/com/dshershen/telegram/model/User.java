@@ -1,6 +1,9 @@
 package com.dshershen.telegram.model;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
 
+import java.util.Objects;
+
+//import org.springframework.boot.autoconfigure.domain.EntityScan;
+/*
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -8,6 +11,8 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "USERS")
+
+ */
 public class User {
 
     private String chatId;
@@ -33,7 +38,7 @@ public class User {
         this.id = id;
     }
 
-    @Id
+   // @Id
     public Long getId() {
         return id;
     }
